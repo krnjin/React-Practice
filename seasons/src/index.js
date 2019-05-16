@@ -18,20 +18,22 @@ class App extends React.Component{
 
     // React says we have to define render!!!!
     render() {
-        return (    
-            // !this.state.lat
-            // ?
-            // <div>
-            //     Error: {this.state.errorMessage}
-            // </div> 
-            // : <div>
-            //     <SeasonDisplay 
-            //         lat={this.state.lat} 
-            //         long={this.state.long}
-            //     />
-            // </div>
-            this.state.lat && 
-        );
+        if (this.state.errorMessage && !this.state.lat){
+            return <div>Error: {this.state.errorMessage}</div>;
+        }
+
+        if(!this.state.errorMessage && this.state.lat){
+            return <SeasonDisplay lat={ this.state.lat } />;
+        }
+
+        return(
+            <div class="ui segment">
+                <div class="ui active dimmer">
+                    <div class="ui text loader">Loading</div>
+                </div>
+                <p></p>
+            </div>
+        )
     }
 }
 
