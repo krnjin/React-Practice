@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component{
     state = { lat: null, errorMessage: ``};
@@ -26,14 +27,7 @@ class App extends React.Component{
             return <SeasonDisplay lat={ this.state.lat } />;
         }
 
-        return(
-            <div class="ui segment">
-                <div class="ui active dimmer">
-                    <div class="ui text loader">Loading</div>
-                </div>
-                <p></p>
-            </div>
-        )
+        return <Spinner />;
     }
 }
 

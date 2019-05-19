@@ -1,12 +1,19 @@
 import React from 'react';
 
+
+const randomStyle = {
+    backgroundColor: 'red',
+}
+
+
 const Spinner = () => {
     return (
-    <div class="ui segment">
-        <div class="ui active dimmer">
-            <div class="ui text loader">Loading</div>
+        <div className="ui active dimmer" style={randomStyle}>
+            <div className ="ui text loader">
+                Loading.....!!! Pleas wait!
+            </div>
         </div>
-        <p></p>
-    </div>
     );
 };
+
+export default Spinner;
