@@ -34,7 +34,6 @@ const SeasonDisplay = (props) => {
     // const icon = season === `winter` ? `snowflake` : `sun`;
     
     const { text, iconName } = seasonConfig[season]; //destructuring
-
     const today = getDate();
 
     return (

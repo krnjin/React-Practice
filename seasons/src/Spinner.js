@@ -6,14 +6,19 @@ const randomStyle = {
 }
 
 
-const Spinner = () => {
+const Spinner = (props) => {
     return (
         <div className="ui active dimmer" style={randomStyle}>
             <div className ="ui text loader">
-                Loading.....!!! Pleas wait!
+                {props.message}
             </div>
         </div>
     );
+};
+
+//defining default
+Spinner.defaultProps = {
+    message: 'Loading...'
 };
 
 export default Spinner;
